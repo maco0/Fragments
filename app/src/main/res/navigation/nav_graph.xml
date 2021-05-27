@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentHome"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.example.task5.fragments.FragmentHome"
+        android:label="FragmentHome"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_fragmentHome_to_fragmentInformation"
+            app:destination="@id/fragmentInformation" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentInformation"
+        android:name="com.example.task5.fragments.FragmentInformation"
+        android:label="FragmentInformation"
+        tools:layout="@layout/fragment_information"
+
+        >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue=" " />
+        <argument
+            android:name="surname"
+            app:argType="string"
+            android:defaultValue=" " />
+        <argument
+            android:name="gender"
+            app:argType="string"
+            android:defaultValue=" " />
+        <argument
+            android:name="age"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
