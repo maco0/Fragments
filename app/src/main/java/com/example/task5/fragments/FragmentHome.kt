@@ -31,6 +31,10 @@ class FragmentHome:Fragment(R.layout.fragment_home) {
             val surname: String = SurnameEditText.text.trim().toString()
             val gender: String = GenderEditText.text.trim().toString()
             val age: String = AgeEditText.text.trim().toString()
+            if(name.isEmpty()||surname.isEmpty()||gender.isEmpty()||age.isEmpty()){
+                Toast.makeText(requireActivity(),"Please fill all components",Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
       val action = FragmentHomeDirections.actionFragmentHomeToFragmentInformation(name,surname,gender,age.toInt())
       navController.navigate(action)
